@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Just for you, Goldfish 🐠</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Prevent chat preview image -->
+  <meta property="og:title" content="Just for you 🙂">
+  <meta property="og:description" content="Tap to open">
+  <meta property="og:image" content="">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #ffe6ef, #fff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", system-ui, sans-serif;
+      overflow: hidden;
+    }
+
+    /* HEARTS */
+    .heart {
+      position: absolute;
+      color: #ff8fa3;
+      font-size: 18px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      width: 90%;
+      max-width: 420px;
+      padding: 30px 25px;
+      border-radius: 26px;
+      box-shadow: 0 25px 50px rgba(255, 143, 163, 0.25);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #ff6f91;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 18px;
+    }
+
+    .photo-frame {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, #ffb3c6, #ffe3ec);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .message {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .message span {
+      display: block;
+      margin: 6px 0;
+    }
+
+    .footer {
+      font-size: 13px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating hearts -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+
+  <div class="card">
+    <div class="title">Just for you, Goldfish</div>
+    <div class="subtitle">🎄 a tiny Christmas surprise</div>
+
+    <div class="photo-frame">
+      <img src="goldfish.jpg" alt="Goldfish">
+    </div>
+
+    <div class="message">
+      <span>I don’t need a gift this Christmas,</span>
+      <span>because you always forget things,</span>
+      <span>but somehow you became my favourite 🎁</span>
+    </div>
+
+    <div class="footer">
+      made with a smile 🙂
+    </div>
+  </div>
+
+</body>
+</html>
